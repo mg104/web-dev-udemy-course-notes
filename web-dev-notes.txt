@@ -1,0 +1,42 @@
+HTML:
+
+1.) Tags: <h1> ; Elements: <h1>*text*</h1>
+2.) Headings: <h1> to <h6>
+3.) Paragraphs: <p></p> ; Used to separate lines from each other
+4.) Horizontal rule: <hr /> ; Used to insert a horizontal line
+5.) Break: <br /> ; Used to separate lines WITHIN A PARAGRAPH (not making new paragraph)
+6.) Ordered lists: Used to make numbered lists ;
+        
+    Code:
+    <ol>My Items:
+        <li>Item 1</li> <---li tag means "list item"
+        <li>Item 2</li>
+    </ol>
+    
+    Output:
+    My Items:
+        1. Item 1
+        2. Item 2
+7.) Unordered lists: Used to make lists with bullet points;
+
+    Code:
+    <ul>My Items:
+        <li>Item 1</li> <---li tag means "list item"
+        <li>Item 2</li>
+    </ul>
+    
+    Output:
+    My Items:
+        . Item 1
+        . Item 2
+
+8.) Attributes: Some elements can have attributes with values. These elements are known as Anchor elements. Note that attribute values are always enclosed within quotes, to distinguish them from the other HTML code (like tags, etc)
+
+    Code: <a href="https://www.google.com">Google<a>
+    Output: Google
+        When you click on Google above, it takes you to Google.com in the browser.
+
+9.) Image elements: <img src="image location" alt="image description"/> ; This is like a void element (no text) and hence doesn't have a closing tag. It is used to display an image. src is used to specify image location (on the internet or local) and alt is used to describe images for the visually impaired who might use screen-reader.
+
+10.) 
+        
