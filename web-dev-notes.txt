@@ -62,6 +62,7 @@ HTML:
                     </style>
                 </html>
         This applies the styling only to a particular html page only and the styling cannot be applied to multiple pages at once from only this code.
+        Put the code for css in <head> for this.
 
     c.) External: Mention the styling as a XYZ.css (like: styles.css or main.css, or anything else) in the project files, and add the mention to this file in the html files.
         Code:   
@@ -80,3 +81,13 @@ HTML:
                     style-attribute:style-value
                 }
         This is the most commonly used way of adding css styling to html pages.
+        Put the code for css in <head> for this.
+
+13.) CSS Selectors: In .css files, select the HTML elements to style in the following manner:
+    
+    a.) For selecting all elements with tag abc: abc{}
+    b.) For selecting all elements having class=class-value: .class-value{} 
+    c.) For selecting all elements having id=id-value: #id-value{}
+    d.) For selecting all elements having tag abc with attribute1: abc[attribute1]{}
+    e.) For selecting all elements with tag abc having attribute1="attribute1-value": abc[attribute1="attribute1-value"]{}
+    f.) For selecting all elements in a page: *{}
