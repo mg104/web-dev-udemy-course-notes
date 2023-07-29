@@ -38,5 +38,45 @@ HTML:
 
 9.) Image elements: <img src="image location" alt="image description"/> ; This is like a void element (no text) and hence doesn't have a closing tag. It is used to display an image. src is used to specify image location (on the internet or local) and alt is used to describe images for the visually impaired who might use screen-reader.
 
-10.) 
-        
+10.) Image elements can go inside Anchor (<a>) tags:
+
+    Code: <a href="..."> 
+                <img src="" />
+          </a>
+    Output: An image that contains embedded link. When we hover mouse over the image it turns into a "hand" and we can click on it to go to the embedded link in <a> tag.
+
+11.) While embedding pages or images into a website, you can use absolute paths (absolute paths like in linux) or relative paths (relative to the location of the html page in which you're referring to the embedded page or image) using ./ or ../ syntax.
+
+12.) CSS (Cascading Style Sheets) is a programming language used to add styling to HTML. There are 3 ways of adding CSS styling to an HTML file:
+
+    a.) Inline: Mention the styling inside the tag of the element that you want to style:
+        Code : <html style="style-attribute:style-value">...</html>
+        This will only style the particular element, and is generally not used.
+
+    b.) Internal: Mention the styling anywhere in the HTML document that you want to add style to:
+        Code:   <html>
+                    <style>
+                        html{
+                            style-attribute:style-value
+                        }
+                    </style>
+                </html>
+        This applies the styling only to a particular html page only and the styling cannot be applied to multiple pages at once from only this code.
+
+    c.) External: Mention the styling as a XYZ.css (like: styles.css or main.css, or anything else) in the project files, and add the mention to this file in the html files.
+        Code:   
+                index.html:
+
+                <html>
+                    <link 
+                        rel="stylesheet" 
+                        href="./styles.css"
+                    />
+                </html>
+
+                styles.css:
+
+                html{
+                    style-attribute:style-value
+                }
+        This is the most commonly used way of adding css styling to html pages.
