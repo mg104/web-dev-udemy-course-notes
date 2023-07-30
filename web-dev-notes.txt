@@ -91,3 +91,44 @@ HTML:
     d.) For selecting all elements having tag abc with attribute1: abc[attribute1]{}
     e.) For selecting all elements with tag abc having attribute1="attribute1-value": abc[attribute1="attribute1-value"]{}
     f.) For selecting all elements in a page: *{}
+
+14.) CSS Colors: Name colors in CSS using alphabetical names of colors, or their hexadecimal codes, like "darkgreen" or "#FAF8F1"
+
+15.) To get different free fonts:
+    a.) Go to https://fonts.google.com/
+    b.) Select the fonts that you want 
+    c.) Search and select the fonts you want
+    d.) Go to "View Selected Families" on the top-right of the page
+    e.) Copy the code in <link> section and paste it in the <head> portion of your html page's code
+    f.) Copy the code in "CSS rules to specify families" and use it in the styles.css file of your project.
+
+16.) Chrome Inspecting tool: This is mainly used to inspect other websites' webpages that we might like. To use Chrome inspecting tool, do the following:
+    a.) Right-click on an element in a webpage OR press Ctrl+Shift+I
+    b.) Press Ctrl+Shift+C for automatically select the html code and css code for any element in the webpage
+    c.) Select "Styles" tab to view the CSS styling of the selected element. Note that there are always some "default" values supplied by the browser to an element, which can be over-ridden using our own specified CSS styling. Our changes will be applied rather than default values then.
+    d.) Select "Computed" to see the final "computed" values of different fonts and other styling finally applied to the element. "Computed" means, for example, the final values that were computed (say 2 * 100px = 200px) from the raw values (say 2rem).
+
+17.) Box Model: In an HTML document, every element is actually inside an invisible box. This box has the following 4 measurements:
+    
+    a.) Box: This is the box containing the element. It's dimensions can be set by setting "height" and "width" of the element
+    b.) Border: This is the border around the box. It's thickness on 4 sides can be set by setting it like so- border: size style color (for example: border: 10px solid black, OR border: 20px dashed grey, etc).
+        We can also set the width of each of the 4 sides of the border by setting: 
+        a.) border-width: px (for example: border-width: 10px) - This sets the border width of top, right, bottom and left to 10px each
+        b.) border-width: top&bottompx left&rightpx(for example: border-width: 10px 20px) - This sets the border width of top and bottom to 10px, and left and right to 20px.
+        c.) border-width: toppx rightpx bottompx leftpx (for example: border-width: 10px 20px 30px 40px) - This sets the size of top to 10px, right to 20px, bottom to 30px and left to 40px.
+    c.) Padding: This is the box that can be put between the inside box and the border. It is set in a manner similar to setting the dimensions of the Border.
+    d.) Margin: This is the box that can be outside the border. It is set in a manner similar to setting the dimensions of the Border.
+
+    Note that since these boxes are usually invisible in a webpage as they're mainly used to align different elements on a webpage, they might cause a CSS file to behave abnormally and it might be difficult to troubleshoot problems due to the invisible padding from them in a webpage. To make troubleshooting issues due to them easier, use a tool called "Pesticide" in Google Chrome.
+
+18.) Cascade/How to resolve conflicting CSS styling rules: There can be a scenario where we may have applied different styling rules to the same html element. If this is the case, then the rules listed out in the picture/diagram "./CSS-cascade-importance-rules" will be applied, in a "cascading" manner, i.e., the rules towards left and lower side will be more important than rules in right and upper side of the picture/diagram
+
+19.) 
+
+
+
+
+
+
+
+
