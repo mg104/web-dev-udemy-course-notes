@@ -123,9 +123,16 @@ HTML:
 
 18.) Cascade/How to resolve conflicting CSS styling rules: There can be a scenario where we may have applied different styling rules to the same html element. If this is the case, then the rules listed out in the picture/diagram "./CSS-cascade-importance-rules" will be applied, in a "cascading" manner, i.e., the rules towards left and lower side will be more important than rules in right and upper side of the picture/diagram
 
-19.) 
+19.) position (Positioning): An HTML element can be positioned according to the following 4 methods, by mentioning its "position" attribute in CSS:
+    a.) position: "static" - This is the default wherein an element is positioned at bottom-left of its previous element
+    b.) position: "relative" ; top: 50px; left: 50px; - In this, an element is positioned relative to its static position, for example in this case: 50px down from top and 50px right from left.
+    c.) position: "absolute" ; top: 50px; left: 50px; - In this, an element is positioned relative to it nearest ancestor which has its position set to anything else than static. If there's no such ancestor then the element is positioned with respect to the top left of the browser.
+    d.) position:  "fixed" - In this the element is positioned at a fixed location wrt the top left of the browser, and doesn't move even when we scroll up or down or right or left on the page.
 
-
+20.) display (Dispalying of elements): This attribute controls the display position of 2 elements wrt to each other. There are 3 options for this:
+    a.) display: "block" - This is every element's display default value (except in case of span element the default value of display is inline). In this case, the element's box occupies the entire width on the page. As such, the second element just after it is moved to the next "row" to it. It's height and width can be adjusted through the height and width attributes.
+    b.) display: "inline" - This option makes the element occupy only as much width as is needed to display that element. As such, the element after it will be displayed next to it in the same line. In this option, the element doesn't respond to setting it's height or width.
+    c.) display: "inline-block" - In this option, the element is inline but it's height and width can be adjusted like a block element.
 
 
 
