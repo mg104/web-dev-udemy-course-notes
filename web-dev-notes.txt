@@ -134,6 +134,11 @@ HTML:
     b.) display: "inline" - This option makes the element occupy only as much width as is needed to display that element. As such, the element after it will be displayed next to it in the same line. In this option, the element doesn't respond to setting it's height or width.
     c.) display: "inline-block" - In this option, the element is inline but it's height and width can be adjusted like a block element.
 
+21.) float (displaying an element to "mould" around it's previous sibling element): If there is an img element containing an image and a p element containing some text after the img element,
+        then in case we write: <img>float: left</img>, then the text will start occupying the leftover space to the right of the image (like in a newspaper article where text appears side-by-side
+        of the article's images). In case there are 2 div elements adjacent to each other in html code, then by setting first div element to float: "left" we can move it to left of page and
+        by setting second element's float: "right" we can position it to the right of the first div element.
+    If you want a footer (for example) to ignore the previous element having float: "left" or "right", then set the footer's clear: "left" or "right" or "both" to make the footer ignore this setting of its previous sibling's float attributes.
 
 
 
