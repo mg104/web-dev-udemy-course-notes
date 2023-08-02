@@ -142,7 +142,110 @@ HTML:
         by setting second element's float: "right" we can position it to the right of the first div element.
     If you want a footer (for example) to ignore the previous element having float: "left" or "right", then set the footer's clear: "left" or "right" or "both" to make the footer ignore this setting of its previous sibling's float attributes.
 
+22.) Media queries: To make a device more responsive, use the @media query in the following manner:
+        @media (max-width: "max-width-value") {
+            elementabc {
+                ......
+            }
+        }- This styles the page in a manner that when the width falls below max-width-value then the elementabc is given the styling that is enclosed inside the curly brackets under the 
+        @media.
 
+23.) flex direction: 
+        
+        IMPORTANT NOTE: For flexbox, also see the flexbox cheatsheet ./css-flexbox-poster.png.
+        
+        Flexbox is a dynamic way to align items on a page. It can be set by mentioning display: flex in the styling of the container item containing the elements that need to be
+        inside the flexbox. It can be customized by assigning the following 2 possible values to the flex-direction attribute:
+        
+        a.) flex-direction: row - This aligns the items in the container in a single row horizontally. The items "squeeze" together when the screen size is reduced (the squeeze behaviour
+            is determined in more detail in the flex sizing section below). When not squeezed together due to screen size, the items take only width that is required (like in the case
+            when display is set to inline)
+        b.) flex-direction: row-reverse - This is like row option, but just that the order of items from left to right is reversed.
+        c.) flex-direction: column - This aligns the items in the container in a single column vertically.
+        d.) flex-direction: column-reverse: Just like row-reverse
+        e.) Another option is to also mention gap: XXXpx in the container's CSS code body, to specify spaces between each of the flexbox's items.
 
+        The natural direction of flex-direction (horizontal in case of flex-direction: row; and vertical in case of flex-direction: column) is known as main axis and the 
+        direction which is perpendicular to the flex-direction (vertical in case flex-direction: row; and horizontal in case of flex-direction: column) is known as cross axis
 
+        To control the size of flex box along the main axis (therefore: width in case of flex-direction: row and height in case of flex-direction: column) can be set by setting 
+        flex-basis: XXXpx in the item's (not the item's container) CSS code body.
 
+24.) flex layout: Flexbox allows different options as below:
+
+        a.) order (in items' CSS; not in container's CSS): If we set order: 1 for item1 order: 10 for item2, order: 3 for item3, say, flexbox arranges these items in the increasing order, 
+            i.e., as item1 item3 item2.
+
+        b.) justify-content (in container's CSS; not in items' CSS): This works just like align-items (explained below) with the ONLY DIFFERENCE being that it works along the main-axis
+                while the align-content works along the cross-axis.
+
+                When flex-direction: row, then 
+                1.) justify-content: flex-start aligns items from left side of the page. 
+                2.) justify-content: flex-end aligns items from right to left
+                3.) justify-content: center aligns items in middle of horizontal line
+                4.) justify-content: space-between aligns items with no space between flex-start and first item, and no space between flex-end and last item.
+                5.) justify-content: space-around is just like space-between but with space between flex-start and first item, and space between flex-end and last item.
+                6.) There are a few other values as in the cheatsheet.
+
+                When flex-direction: column, then
+                1.) justify-content: flex-start aligns items from top of the page
+                2.) justify-content: flex-end aligns items from bottom of the page
+                3.) justify-content: center aligns items in middle of the container's height. NOTE: For container, set height: 100% and justify-content: center, in order to center the 
+                        items vertically in the middle of the page
+                4.) Other values as above for flex-direction: row and as in the cheatsheet
+
+        c.) flex-wrap (in container's CSS, not in items' CSS): Following values can be assigned to this attribute:
+                1.) flex-wrap: wrap - This makes the items wrap around into another row in case of flex-direction: row and another column in case of flex-direction: column, when
+                        the screen size is reduced horizontally or vertically, respectively.
+                2.) flex-wrap: nowrap - This stops the items from wrapping around and they simply disappear when the screen size is reduced horizontally or vertically.
+        
+        d.) align-items: This only works when flex-wrap: nowrap. It doesn't work when flex-wrap: wrap. It works just like justify content (explained above) and has all the same options as 
+                justify-content, with the ONLY DIFFERENCE being that it works along the cross-axis while justify content works along the main axis.
+            NOTE: To make a SINGLE item have a different alignment across cross-axis, as compared to other items in the same container as this item, just go into the CSS code body of THIS
+                    PARTICULAR ITEM and set align-self: .... to align it differently than the rest of the items.
+
+        e.) align-content: This works just like align-items, but it works ONLY when flex-wrap: nowrap.
+
+25.) flex-sizing: 
+
+        IMPORTANT NOTE: This is quite a complex subject and to learn about it completely, view the complete video: https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/37368390#overview
+
+        Flex sizing determines:
+            a.) What would be the size of each item in the flexbox be
+            b.) How would the size of each item behave in case the screen size of the browser is increased or decreased.
+        
+        The size and it's behaviour of each of the items is controlled by each of the following values:
+            a.) Content width: This is the width of the item's content. It is equal to:
+                1.) When the screen is maximized: Width of the item's content on same line
+                2.) When the screen is reduced: Width of the item's longest word
+            b.) width: This attribute of an item can be set in its CSS code body. 
+            c.) flex-basis: This is another attribute whose value can be set in the CSS code body.
+            d.) min-width and max-width: We can set min-width and max-width of an item in its CSS code body.
+        
+        The following rules determine the size behaviour of items in a flex box:
+            The width of flexbox items is determined in the following sequence (from right to left in order of decreasing priority):
+            content width < width < flex-basis < Min/Max-width
+
+            In no case does the items width reduce such that it's longest word is broken up. In case the width is so less, the item disappears out of the browser window but doesn't 
+            reduce it's width at all.
+            a.) Default size behaviour:
+                1.) When screen size is normal: Items take "inline" width, i.e., only the width that they need to display the content.
+                2.) When screen size is reduced: Items adjust space by reducing their width and increasing their height to display all the content. However, they never go below their
+                    minimum Content width (which is the longest word in the item)
+            b.) Size behaviour when width or flex-basis is set:
+                    1.) When screen size is normal: If content-width allows, the size is set to width or flex-basis. If both width and flex-basis is set then the width is ignored (as per the priority order
+                    mentioned above) and flex-basis is taken to be the width.
+                    2.) When screen size is reduced: If the screen size is reduced, the item's width is reduced but only till it's longest word can fit the item's box. Otherwise the item
+                        just starts disappearing out of the browser window
+            c.) min-width and max-width: min-width and max width are the MOST IMPORTANT attribute which can be set and which (if they're set) set HARD LIMIT on the minimum (upon reducing
+                    screen size) and maximum (when the screen is normal size) width of the item. Everything else (when width or flex-basis have been set or not set) keeps working as it is
+                    but the min-width and max-width come into picture only when the item width approaches the hard boundary set by them.
+        
+        There are 2 more attributes that can be set:
+
+            1.) flex-grow: When it's set to 0 the items CANNOT "grow" beyond their set width and when it's set to 1 the items CAN grow beyond their set width
+            2.) flex-shrink: Similar as flex-grow but in terms of items shrinking.
+            3.) When both flex-grow and flex-shrink are set to 1 then the items can grow and shrink on increasing or decresing screen size.
+            4.) flex-grow and flex-shrink can be set simultaniously by setting flex: 1 1 0 (which means that flex-grow: 1; flex-shrink: 1; and 0 means equal width of all items)
+            5.) In case there are 2 items and one item's flex: 1 1 0 and other items flex: 2 2 0, then this means that item2 will always be 2 times of the item1's width no matter what the 
+                screen size is.
